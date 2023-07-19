@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 public class PojoAConsumer {
 
 
-    @KafkaListener(
-            topics = "${kafka.topic.demo.a}",
-            groupId = "${kafka.topic.demo.a.consumer.group}",
-            autoStartup = "${kafka.topic.demo.a.auto.startup}",
-            batch = "false",
-            errorHandler = "kafkaErrorHandler"
-    )
+//    @KafkaListener(
+//            topics = "${kafka.topic.demo.a}",
+//            groupId = "${kafka.topic.demo.a.consumer.group}",
+//            autoStartup = "${kafka.topic.demo.a.auto.startup}",
+//            batch = "false",
+//            errorHandler = "kafkaErrorHandler"
+//    )
     public void listen(@Payload PojoA strangePojo,
                        Acknowledgment ack) {
         log.info("rcvd {}", strangePojo);

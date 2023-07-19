@@ -1,7 +1,6 @@
 package com.tigerit.kafkademo.services;
 
 import com.tigerit.kafkademo.model.PojoA;
-import com.tigerit.kafkademo.model.PojoB;
 import com.tigerit.kafkademo.model.SubEntity;
 import com.tigerit.kafkademo.producers.KafkaProducer;
 import jakarta.annotation.PostConstruct;
@@ -35,7 +34,5 @@ public class DemoService {
         PojoA pojoA = new PojoA(1, 2, LocalDateTime.now(), "testString".getBytes(StandardCharsets.UTF_8), Collections.singletonList(new SubEntity(5, "22")));
         kafkaProducer.send(topicA, pojoA);
 
-        PojoB pojoB = new PojoB(1, "rahman");
-        kafkaProducer.send(topicB, "customKey", pojoA);
     }
 }
