@@ -21,7 +21,7 @@ public class PojoAConsumer {
 //    )
     public void listen(@Payload PojoA strangePojo,
                        Acknowledgment ack) {
-        log.info("rcvd {}", strangePojo);
+        log.info("Received {}", strangePojo);
         ack.acknowledge();
     }
 }
